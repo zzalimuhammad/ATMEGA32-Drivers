@@ -12,8 +12,8 @@
 #define DIO_INTERFACE_H
 #include "std_types.h"
 
-#define OUTPUT				(1)
-#define INPUT				(0)
+#define OUTPUT			  (1)
+#define INPUT		  		(0)
 
 #define PORTA_ID			(0)
 #define PORTB_ID			(1)
@@ -29,8 +29,8 @@
 #define PIN6_ID				(6)
 #define PIN7_ID				(7)
 
-#define HIGH				(1)
-#define LOW					(0)
+#define HIGH			   	(1)
+#define LOW					  (0)
 
 #define DDRA	(*(volatile u8*)0x3A)
 #define PORTA	(*(volatile u8*)0x3B)
@@ -48,10 +48,10 @@
 #define PORTD	(*(volatile u8*)0x32)
 #define PIND	(*(volatile u8*)0x30)
 
-void dio_setPinDirection	(u8 portId, u8 pinId, u8 direction);
-void dio_writeChannel		(u8 portId,u8 pinId,u8 value);
-void dio_flipChannel		(u8 portId,u8 pinId);
-u8 dio_readChannel			(u8 portId,u8 pinId);
+void dio_setPinDirection	(u8 portId, u8 pinId, u8 direction); //set any pin from any port to be Output pin or Input pin.
+void dio_writeChannel		(u8 portId,u8 pinId,u8 value); // write in a pin 
+void dio_flipChannel		(u8 portId,u8 pinId); // toggle pin
+u8 dio_readChannel			(u8 portId,u8 pinId); // read value on pin 
 
 
 #endif
